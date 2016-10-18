@@ -37,8 +37,10 @@ Vertex two = new Vertex(321, 654, 0);
 double weight = 14.5;
 graph.add(one);
 graph.add(two);
-graph.connect(one, two, weight);
-graph.disconnect(one, two);
+Edge<Vertex> edge = graph.connect(one, two, weight);
+graph.disconnect(one, two); 
+// or
+graph.disconnect(edge);
 ```
 
 ### Edge Creation (bidirectional)

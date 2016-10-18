@@ -28,6 +28,8 @@ public interface Graph<V extends Vertex> {
 
     public Edge<V> disconnect(V source, V destination);
 
+    public void disconnect(Edge<V> edge);
+
     public void disconnectBidirectional(V one, V two);
 
     public Set<V> vertices();

@@ -88,6 +88,13 @@ public class BaseGraph<V extends Vertex> implements Graph<V> {
     }
 
     @Override
+    public void disconnect(Edge<V> edge) {
+        if (edge == null)
+            throw new IllegalArgumentException();
+        disconnect(edge.source, edge.destination);
+    }
+
+    @Override
     public void disconnectBidirectional(V one, V two) {
         if (one == null || two == null)
             throw new IllegalArgumentException();
